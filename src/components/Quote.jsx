@@ -44,7 +44,6 @@ function Quote() {
           <div className="tweet">
             <a id="tweet-quote" target="_top" href={tweet}>
               <i class="fa-brands fa-twitter"></i>
-              Tweet
             </a>
           </div>
           <button
@@ -52,7 +51,7 @@ function Quote() {
             id="new-quote"
             onClick={fetchData}
           >
-            Get New Quote
+            New Quote
           </button>
         </div>
       </div>

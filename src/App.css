@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Alata;
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -24,7 +30,6 @@ body {
 }
 
 button {
-  height: 38px;
   border: 3px;
   border-radius: 3px;
   outline: none;
@@ -65,4 +70,19 @@ button {
   width: 100%;
   justify-content: left;
   flex-direction: row;
+}
+
+#btns button {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: tomato;
+  color: white;
+  transition: all 0.2s;
+}
+
+#btns button:hover {
+  transform: scale(0.9);
 }
