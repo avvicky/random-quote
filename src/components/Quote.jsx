@@ -18,41 +18,56 @@ function Quote() {
     "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" +
     encodeURIComponent('"' + quote.quote + '"' + quote.author);
 
-  const fetchData = () => {
-    return fetch("https://api.api-ninjas.com/v1/quotes", {
-      headers: { "X-Api-Key": "by3SEkrwb1egGdaUalWSTA==Hm8isy3NbQHrkUuo" },
-    })
+  function fetchData() {
+    fetch("https://api.quotable.io/random")
       .then((response) => response.json())
-      .then((data) => setQuote(data[0]));
-  };
+      .then((data) => {
+        setQuote([data.content, data.author]);
+      });
+  }
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  console.log(quote);
+
   document.body.style.backgroundColor = color;
   return (
-    <div id="container">
-      <div id="quote-box">
-        <h1 style={{ color: color }} id="text">
-          {quote.quote}
-        </h1>
-        <h4 style={{ color: color }} id="author">
-          {quote.author}
-        </h4>
-        <div id="buttons">
-          <div className="tweet">
-            <a id="tweet-quote" target="_top" href={tweet}>
-              <i class="fa-brands fa-twitter"></i>
-            </a>
+    <div id="wrapper">
+      <div id="container">
+        <div id="quote-box">
+          <h1 style={{ color: color }} id="text">
+            {quote[0]}
+          </h1>
+          <h4 style={{ color: color }} id="author">
+            {quote[1]}
+          </h4>
+          <div id="buttons">
+            <div className="tweet">
+              <a id="tweet-quote" target="_top" href={tweet}>
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+            <button
+              style={{ backgroundColor: color }}
+              id="new-quote"
+              onClick={fetchData}
+            >
+              New Quote
+            </button>
           </div>
-          <button
-            style={{ backgroundColor: color }}
-            id="new-quote"
-            onClick={fetchData}
+        </div>
+        <div className="linkedin" style={{ backgroundColor: color }}>
+          <a
+            id="linkedin-link"
+            target="blank"
+            href="https://www.linkedin.com/in/vignesh-mernstack/"
           >
-            New Quote
-          </button>
+            <p>
+              <i class="fa-brands fa-linkedin"></i>Degined and Devloped by
+            </p>
+          </a>
         </div>
       </div>
     </div>
