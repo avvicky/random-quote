@@ -29,8 +29,7 @@ function Quote() {
   useEffect(() => {
     fetchData();
   }, []);
-
-  console.log(quote);
+  
 
   document.body.style.backgroundColor = color;
   return (
