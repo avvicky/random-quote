@@ -2,13 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 let colors = [
-  "#e9c46a",
-  "#e76f51",
-  "#2a9d8f",
-  "#457b9d",
-  "#118ab2",
-  "#e07a5f",
-  "#8338ec",
+  "linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%)",
+  "linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%)",
+  "linear-gradient(90deg, #efd5ff 0%, #515ada 100%)",
+  "linear-gradient(90deg, #1CB5E0 0%, #000851 100%)",
+  "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
+  "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
 ];
 
 function Quote() {
@@ -25,13 +24,12 @@ function Quote() {
         setQuote([data.content, data.author]);
       });
   }
-
+  //
   useEffect(() => {
     fetchData();
   }, []);
-  
 
-  document.body.style.backgroundColor = color;
+  document.body.style.background = color;
   return (
     <div id="wrapper">
       <div id="container">
@@ -49,7 +47,7 @@ function Quote() {
               </a>
             </div>
             <button
-              style={{ backgroundColor: color }}
+              style={{ backgroundColor: "transparent" }}
               id="new-quote"
               onClick={fetchData}
             >
@@ -57,7 +55,7 @@ function Quote() {
             </button>
           </div>
         </div>
-        <div className="linkedin" style={{ backgroundColor: color }}>
+        <div className="linkedin" style={{ background: "transparent" }}>
           <a
             id="linkedin-link"
             target="blank"

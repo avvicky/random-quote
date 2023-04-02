@@ -9,7 +9,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s;
+  transition: background 0.3s;
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
 }
 #container {
   max-width: 60%;
